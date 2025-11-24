@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <view
+        android:id="@+id/surfaceView"
+        class="edu.up.cs301homework1b.DrawingView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/color_panel_guide"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/color_panel_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/color_panel_guide"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/element_name_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Current Element: None Tapped"
+            android:textSize="18sp"
+            android:paddingBottom="8dp"
+            android:textAlignment="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+            <TextView android:layout_width="60dp" android:layout_height="wrap_content" android:text="Red" android:textColor="@android:color/holo_red_dark" />
+            <SeekBar android:id="@+id/red_seekbar" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:max="255" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+            <TextView android:layout_width="60dp" android:layout_height="wrap_content" android:text="Green" android:textColor="@android:color/holo_green_dark" />
+            <SeekBar android:id="@+id/green_seekbar" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:max="255" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+            <TextView android:layout_width="60dp" android:layout_height="wrap_content" android:text="Blue" android:textColor="@android:color/holo_blue_dark" />
+            <SeekBar android:id="@+id/blue_seekbar" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:max="255" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
